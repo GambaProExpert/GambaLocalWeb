@@ -251,7 +251,6 @@
     justify-content: space-around;
     padding: 1.25rem 1.5rem;
     border-top: 1px solid var(--border-subtle);
-    background: rgba(0,0,0,0.2);
   }
 }
 
@@ -281,7 +280,7 @@
   gap: 0.875rem;
   padding: 0.75rem;
   border-radius: var(--radius-md);
-  background: rgba(0,0,0,0.15);
+  background: var(--amber-dim);
   border: 1px solid var(--border-subtle);
   transition: border-color 0.3s;
 
@@ -310,7 +309,7 @@
   display: block;
   font-family: var(--font-mono);
   font-size: 1rem;
-  color: rgb(128, 64, 0);
+  color: var(--nc);
   letter-spacing: 0.15em;
   margin-bottom: 0.2rem;
 }

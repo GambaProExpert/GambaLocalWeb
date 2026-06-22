@@ -1,5 +1,6 @@
 <nav class="navbar" [class.scrolled]="scrolled">
   <div class="nav-inner">
+
     <a routerLink="/" class="nav-brand" (click)="scrollToTop()">
       <div class="brand-mark">
         <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,16 +18,17 @@
     </a>
 
     <div class="nav-links">
-      <a href="#nodes" class="nav-link">Nodos</a>
-      <a href="#services" class="nav-link">Servicios</a>
-      <a href="#sobre-mi" class="nav-link">Sobre mí</a>
+      <a routerLink="/" fragment="nodes" class="nav-link">Nodos</a>
+      <a routerLink="/" fragment="services" class="nav-link">Servicios</a>
+      <a routerLink="/" fragment="sobre-mi" class="nav-link">Sobre mí</a>
+
       <a href="https://github.com/GambaProExpert" target="_blank" class="nav-link nav-link--icon">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
           <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
         </svg>
-      </a>   
-      
-      <!-- Boton de cambio de tema -->
+      </a>
+
+      <!-- Theme switch -->
       <div class="theme-switch" (click)="toggleTheme()">
         <span [class.active]="!isDark">Claro</span>
         <div class="track" [class.dark]="isDark">
@@ -34,9 +36,65 @@
         </div>
         <span [class.active]="isDark">Oscuro</span>
       </div>
-    </div>
-  </div>
 
-  
+      <!-- Hamburguesa -->
+      <button class="hamburger" (click)="openDrawer()" aria-label="Abrir proyectos">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
 </nav>
 
+<!-- ── Drawer overlay ── -->
+<div class="drawer-overlay" [class.open]="drawerOpen" (click)="closeDrawer()"></div>
+
+<!-- ── Drawer lateral ── -->
+<aside class="drawer" [class.open]="drawerOpen">
+
+  <div class="drawer-header">
+    <div class="drawer-title-group">
+      <p class="label-mono">Portafolio</p>
+      <h2 class="drawer-title">Otros<br><em>proyectos</em></h2>
+    </div>
+    <button class="drawer-close" (click)="closeDrawer()" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="drawer-rule"></div>
+
+  <div class="drawer-projects">
+    <a
+      class="project-card"
+      *ngFor="let p of projects"
+      [routerLink]="['/project', p.id]"
+      (click)="closeDrawer()"
+    >
+      <div class="project-card__top" [style.background]="p.color + '18'">
+        <div class="project-card__icon" [style.color]="p.color">
+          <span>{{ p.emoji }}</span>
+        </div>
+        <span class="project-card__tag" [style.color]="p.color">{{ p.tag }}</span>
+      </div>
+      <div class="project-card__body">
+        <h3 class="project-card__name">{{ p.name }}</h3>
+        <p class="project-card__desc">{{ p.shortDesc }}</p>
+      </div>
+      <div class="project-card__arrow">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4 10h12M10 4l6 6-6 6" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </a>
+  </div>
+
+  <div class="drawer-footer">
+    <p class="label-mono">gambalocal.es</p>
+  </div>
+
+</aside>

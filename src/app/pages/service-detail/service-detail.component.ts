@@ -33,7 +33,6 @@ export class ServiceDetailComponent implements OnInit {
     }
   }
 
-  // Convertir una URL de Youtube en URL embebible.
    private toEmbedUrl(url: string): string {
     const ytMatch = url.match(
       /(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/

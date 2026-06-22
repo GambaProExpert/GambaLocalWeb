@@ -220,6 +220,21 @@ export class HomelabDataService {
       website: 'https://docs.getoutline.com/s/hosting/doc/docker-7pfeLP5a8t',
       logoUrl: 'https://www.getoutline.com/images/icon-desktop.png',
       loremTitle: 'Outline para la gestión de documentos'
+    },
+    {
+      id: 'homarr',
+      name: 'Homarr',
+      tagline: 'Panel de control para tu homelab',
+      shortDesc: 'Plataforma de gestión para tu homelab, creación de dashboards, con un diseño moderno y funcionalidades avanzadas. Permite organizar y gestionar todos tus servicios en un solo lugar.',
+      category: 'Gestión',
+      categoryColor: '#d31f0b',
+      node: 'NODE-01',
+      nodeAccent: '#a0622e',
+      tags: ['Gestión', 'Panel'],
+      website: 'https://homarr.dev/',
+      logoUrl: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/homarr.png',
+      loremTitle: 'Homarr para crear tu dashboard personalizado',
+      videoUrl: 'https://youtu.be/ILmCPoyyoLE?si=Sjlzmf3lnqm-DzUp'
     }
   ];
 

@@ -17,7 +17,8 @@
       <a routerLink="/" class="btn btn--ghost" style="margin-left: 1rem;">Volver al inicio</a>
     </div>
 
-    <div class="video-section" *ngIf="embedUrl">
+@defer () {
+  <div class="video-section" *ngIf="embedUrl">
       <div class="video-section__header">
         <div class="video-icon">
           <svg viewBox="0 0 24 24" fill="currentColor">
@@ -46,6 +47,10 @@
         ></iframe>
       </div>
     </div>
+}
+@loading() {
+  <a>Cargando vídeo...</a>
+}
  
   </div>
   <ng-template #notFound>

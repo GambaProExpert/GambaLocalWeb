@@ -1,0 +1,71 @@
+<app-navbar></app-navbar>
+
+<div class="project-page">
+  <div class="container" *ngIf="project; else notFound">
+
+    <a routerLink="/" class="back-link">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M16 10H4M10 4l-6 6 6 6" stroke-linecap="round"/>
+      </svg>
+      Volver al inicio
+    </a>
+
+    <!-- Header -->
+    <div class="project-header">
+      <div class="project-emoji" [style.background]="project.color + '18'">
+        {{ project.emoji }}
+      </div>
+      <div>
+        <div class="project-meta">
+          <span class="meta-tag" [style.color]="project.color">{{ project.tag }}</span>
+        </div>
+        <h1 class="project-title title-serif">{{ project.name }}</h1>
+        <p class="project-short">{{ project.shortDesc }}</p>
+        <div class="project-stack">
+          <span class="stack-chip" *ngFor="let t of project.techStack">{{ t }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="project-card">
+      <div class="project-card__top-bar" [style.background]="project.color"></div>
+
+      <h2 class="project-card__section-title">Sobre el proyecto</h2>
+
+      <div class="project-card__body">
+        <p *ngFor="let paragraph of descriptionParagraphs">
+          {{ paragraph }}
+        </p>
+      </div>
+
+      <div class="project-card__divider"></div>
+
+      <!-- Acciones -->
+      <div class="project-card__actions">
+        <a
+          *ngIf="project.link"
+          [href]="project.link"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn--primary"
+        >
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M11 3h6v6M17 3l-8 8M9 5H4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-5" stroke-linecap="round"/>
+          </svg>
+          Ver repositorio
+        </a>
+        <a routerLink="/" class="btn btn--ghost">Volver al inicio</a>
+      </div>
+    </div>
+
+  </div>
+
+  <ng-template #notFound>
+    <div class="not-found container">
+      <p class="label-mono">Error 404</p>
+      <h2 class="title-serif" style="font-size:3rem; margin:1rem 0;">Proyecto no encontrado</h2>
+      <a routerLink="/" class="btn btn--ghost">Volver</a>
+    </div>
+  </ng-template>
+</div>

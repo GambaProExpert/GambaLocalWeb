@@ -1,8 +1,8 @@
 <nav class="navbar" [class.scrolled]="scrolled">
   <div class="nav-inner">
 
-    <a routerLink="/" class="nav-brand" (click)="scrollToTop()">
-      <div class="brand-mark">
+    <div class="nav-brand">
+      <button class="brand-mark" (click)="openDrawer()" aria-label="Abrir proyectos" type="button">
         <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="2" y="8" width="28" height="3" rx="1" fill="currentColor" opacity="0.9"/>
           <rect x="2" y="14.5" width="28" height="3" rx="1" fill="currentColor" opacity="0.6"/>
@@ -10,12 +10,12 @@
           <circle cx="27" cy="9.5" r="1.5" fill="var(--amber)"/>
           <circle cx="27" cy="16" r="1.5" fill="var(--amber)" opacity="0.6"/>
         </svg>
-      </div>
-      <div class="brand-text">
+      </button>
+      <a routerLink="/" class="brand-text" (click)="scrollToTop()">
         <span class="brand-name">HOMELAB GAMBALOCAL</span>
         <span class="brand-sub">Mi pequeño datacenter en casa</span>
-      </div>
-    </a>
+      </a>
+    </div>
 
     <div class="nav-links">
       <a routerLink="/" fragment="nodes" class="nav-link">Nodos</a>
@@ -37,12 +37,6 @@
         <span [class.active]="isDark">Oscuro</span>
       </div>
 
-      <!-- Hamburguesa -->
-      <button class="hamburger" (click)="openDrawer()" aria-label="Abrir proyectos">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
     </div>
 
   </div>
@@ -76,8 +70,8 @@
       (click)="closeDrawer()"
     >
       <div class="project-card__top" [style.background]="p.color + '18'">
-        <div class="project-card__icon" [style.color]="p.color">
-          <span>{{ p.emoji }}</span>
+        <div class="project-card__icon" [style.background]="p.color + '18'">
+          <img [src]="p.imageUrl" [alt]="p.name" loading="lazy">
         </div>
         <span class="project-card__tag" [style.color]="p.color">{{ p.tag }}</span>
       </div>

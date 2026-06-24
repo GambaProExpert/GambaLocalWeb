@@ -10,9 +10,9 @@
     </div>
     <div style="margin-top: 2rem; background: var(--bg-surface); border-radius: var(--radius-lg); padding: 2rem;">
       <p><strong>{{ service.loremTitle }}</strong></p>
-      <p>{{ service.shortDesc }}</p>
+      <p class="service-description">{{ service.shortDesc }}</p>
       <p><strong>Categoría:</strong> <span [style.color]="service.categoryColor">{{ service.category }}</span></p>
-      <p><strong>Nodo:</strong> <span [style.color]="service.nodeAccent">{{ service.node }}</span></p>
+      <p class="service-meta"><strong>Nodo:</strong> <span [style.color]="service.nodeAccent">{{ service.node }}</span></p>
       <a [href]="service.website" target="_blank" class="btn btn--primary" style="margin-top: 1.5rem;">Ir al sitio oficial</a>
       <a routerLink="/" class="btn btn--ghost" style="margin-left: 1rem;">Volver al inicio</a>
     </div>

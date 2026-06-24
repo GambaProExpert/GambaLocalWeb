@@ -185,6 +185,18 @@
   margin: 2rem 0;
 }
 
+.service-description {
+  margin-bottom: 1.4rem;
+}
+
+.service-description + p {
+  margin-top: 1.4rem;
+}
+
+.service-meta {
+  margin: 0.45rem 0;
+}
+
 .detail-actions {
   display: flex;
   gap: 1rem;

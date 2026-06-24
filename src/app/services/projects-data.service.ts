@@ -82,6 +82,7 @@ export class ProjectsDataService {
       imageUrl: 'https://www.jetbrains.com/guide/assets/csharp-logo-265a149e.svg',
       color: '#9B4F96',
       techStack: ['C#', 'TypeScript', 'PostgresSQL', 'SCRUM'],
+      link: 'https://github.com/ISII2526SoftTech/ISII2526SoftTech',
     },
   ];
 

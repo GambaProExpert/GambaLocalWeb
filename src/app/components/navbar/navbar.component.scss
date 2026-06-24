@@ -174,6 +174,77 @@
   .track.dark .thumb { transform: translateX(20px); }
 }
 
+@media (max-width: 760px) {
+  .navbar {
+    padding: 0.85rem 1rem;
+
+    &.scrolled {
+      padding: 0.75rem 1rem;
+    }
+  }
+
+  .nav-inner {
+    position: relative;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .brand-text {
+    max-width: 8.75rem;
+    min-width: 0;
+  }
+
+  .brand-name {
+    display: block;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .brand-sub {
+    display: none;
+  }
+
+  .nav-links {
+    order: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: clamp(1rem, 6vw, 2rem);
+    padding-top: 0.9rem;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+  }
+
+  .nav-link--icon {
+    display: none;
+  }
+
+  .theme-switch {
+    position: absolute;
+    top: 0.35rem;
+    right: 0;
+    gap: 6px;
+
+    span {
+      font-size: 0.66rem;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .brand-text {
+    max-width: 6.5rem;
+  }
+}
+
 /*
    OVERLAY
 */

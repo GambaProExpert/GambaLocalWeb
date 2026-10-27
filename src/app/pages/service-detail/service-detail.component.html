@@ -13,7 +13,7 @@
       <p class="service-description">{{ service.shortDesc }}</p>
       <p><strong>Categoría:</strong> <span [style.color]="service.categoryColor">{{ service.category }}</span></p>
       <p class="service-meta"><strong>Nodo:</strong> <span [style.color]="service.nodeAccent">{{ service.node }}</span></p>
-      <a [href]="service.website" target="_blank" class="btn btn--primary" style="margin-top: 1.5rem;">Ir al sitio oficial</a>
+      <a [href]="service.website" target="_blank" rel="noopener" class="btn btn--primary" style="margin-top: 1.5rem;">Ir al sitio oficial</a>
       <a routerLink="/" class="btn btn--ghost" style="margin-left: 1rem;">Volver al inicio</a>
     </div>
 

@@ -7,7 +7,7 @@
   transition: all 0.4s ease;
 
   &.scrolled {
-    background: var(--bg-beep);
+    background: var(--bg-deep);
     backdrop-filter: blur(16px);
     padding: 1rem 5%;
     border-bottom: 1px solid var(--border-subtle);
@@ -138,8 +138,20 @@
   cursor: pointer;
   user-select: none;
   flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font-family: inherit;
 
-  span {
+  &:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 4px;
+    border-radius: var(--radius-sm);
+  }
+
+  > span:not(.track) {
     font-size: 0.72rem;
     font-family: var(--font-sans);
     color: var(--text-muted);
@@ -150,6 +162,7 @@
   }
 
   .track {
+    display: inline-block;
     position: relative;
     width: 44px;
     height: 24px;
@@ -233,7 +246,7 @@
     right: 0;
     gap: 6px;
 
-    span {
+    > span:not(.track) {
       font-size: 0.66rem;
     }
   }

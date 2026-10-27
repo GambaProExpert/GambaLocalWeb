@@ -27,7 +27,7 @@
       </h1>
 
       <p class="hero-lead animate-up-2">
-        Tres nodos físicos. diez servicios. Control absoluto<br>
+        {{ nodes.length }} nodos físicos. {{ services.length }} servicios. Control absoluto<br>
         de privacidad, almacenamiento y entretenimiento.
       </p>
 
@@ -72,12 +72,12 @@
 
         <div class="status-panel__footer">
           <div class="metric">
-            <span class="metric-val">36 GB</span>
+            <span class="metric-val">{{ totalRamGb }} GB</span>
             <span class="metric-lbl">RAM Total</span>
           </div>
           <div class="metric-sep"></div>
           <div class="metric">
-            <span class="metric-val">10</span>
+            <span class="metric-val">{{ services.length }}</span>
             <span class="metric-lbl">Servicios</span>
           </div>
           <div class="metric-sep"></div>

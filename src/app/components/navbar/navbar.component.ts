@@ -1,4 +1,4 @@
-import { Component, HostListener, Renderer2 } from '@angular/core';
+import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ProjectsDataService, Project } from '../../services/projects-data.service';
@@ -10,7 +10,7 @@ import { ProjectsDataService, Project } from '../../services/projects-data.servi
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   private readonly themeStorageKey = 'theme-preference';
 
   scrolled = false;
@@ -33,6 +33,13 @@ export class NavbarComponent {
   @HostListener('window:scroll')
   onScroll(): void {
     this.scrolled = window.scrollY > 60;
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    if (this.drawerOpen) {
+      this.closeDrawer();
+    }
   }
 
   toggleTheme(): void {

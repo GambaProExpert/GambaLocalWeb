@@ -165,47 +165,7 @@
   flex-wrap: wrap;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 0.875rem 1.75rem;
-  border-radius: var(--radius-sm);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border: none;
-
-  svg { width: 18px; height: 18px; transition: transform 0.3s; }
-
-  &--primary {
-    background: var(--amber);
-    color: var(--bg-deep);
-
-    &:hover {
-      background: var(--amber-soft);
-      box-shadow: 0 8px 24px rgba(232,160,64,0.3);
-      svg { transform: translateX(4px); }
-    }
-  }
-
-  &--ghost {
-    background: transparent;
-    color: var(--text-secondary);
-    border: 1px solid var(--border-warm);
-
-    &:hover {
-      color: var(--text-primary);
-      border-color: var(--amber);
-      background: var(--amber-dim);
-    }
-  }
-}
+.hero-cta .btn svg { width: 18px; height: 18px; }
 
 /* ── Right: Status panel ── */
 .status-panel {

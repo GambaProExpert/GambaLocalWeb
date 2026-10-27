@@ -84,6 +84,28 @@ export class ProjectsDataService {
       techStack: ['C#', 'TypeScript', 'PostgresSQL', 'SCRUM'],
       link: 'https://github.com/ISII2526SoftTech/ISII2526SoftTech',
     },
+    {
+      id: 'TheSellator',
+      name: 'THE SELLATOR',
+      shortDesc: 'Aplicación web para sellar documentos PDF con sellos hechos a medida.',
+      longDesc:
+        'En las prácticas de empresa me di cuenta de la cantidad de tiempo que se pierde sellando documentos a mano, abriendo editores de PDF para colocar el mismo cajetín una y otra vez. ' +
+        'Cogí todo lo que había aprendido allí y me monté mi propia herramienta. THE SELLATOR es una aplicación web donde diseñas tu sello combinando imágenes, texto, fechas y códigos QR, ' +
+        'y lo estampas en las páginas que quieras de un PDF sin instalar absolutamente nada.\n\n' +
+        'El backend está hecho con Laravel 13 sobre PHP 8.3 y el frontend con Vue 3 e Inertia 2, con Tailwind 4 para los estilos y SQLite como base de datos. ' +
+        'El editor de sellos es un canvas donde colocas, escalas, rotas y ordenas cada elemento, y la previsualización del documento va con pdf.js para que veas exactamente dónde va a caer el sello antes de generar nada.\n\n' +
+        'La parte de la que más orgulloso estoy es el motor de sellado, que lo escribí aparte en Java 8 con iText 7. No procesa los PDF desde PHP: corre como un subproceso independiente al que se le pasa toda la configuración en un XML. ' +
+        'Eso me permitió resolver lo más delicado, que es sellar documentos que ya vienen firmados digitalmente. El sello se añade como actualización incremental, respetando los bytes originales, ' +
+        'así la firma se sigue pudiendo verificar aunque avise de que hubo modificaciones posteriores.\n\n' +
+        'Sin cuenta puedes guardar cinco diseños en el propio navegador, y registrándote (con email o con Google) suben a veinticinco sellos y veinticinco documentos archivados en el servidor. ' +
+        'Por el camino salieron cosas que se han vuelto imprescindibles: el marcador ${fecha}, que se resuelve en el momento de sellar, los rangos de páginas tipo "3-9", concatenar un informe al final del documento y exportar e importar sellos en XML.\n\n' +
+        'Se despliega con Docker en una sola imagen y tiene 213 pruebas de PHP y 58 de JavaScript con Vitest detrás. La licencia es AGPLv3, heredada de iText 7. Está en producción y funcionando.',
+      tag: 'Laravel',
+      imageUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg',
+      color: '#FF2D20',
+      techStack: ['Laravel 13', 'Vue 3', 'Java · iText 7', 'Docker'],
+      link: 'https://github.com/GambaProExpert/THE-SELLATOR',
+    },
   ];
 
   getById(id: string): Project | undefined {

@@ -106,6 +106,28 @@ export class ProjectsDataService {
       techStack: ['Laravel 13', 'Vue 3', 'Java · iText 7', 'Docker'],
       link: 'https://github.com/GambaProExpert/THE-SELLATOR',
     },
+    {
+      id: 'MR-RobotIA',
+      name: 'MR-RobotIA',
+      shortDesc: 'Herramienta Blue team para seguridad de infraestructura de IA auto-alojada.',
+      longDesc: `Herramienta para la protección y auditoría de sistemas de IA auto-alojada a media y gran escala. Útil para prevención de una nueva serie de vectores de ataque que no solo afectan al host en sí, si no a todo el que hace uso del modelo abierto que haya alojado en él. Lo que nos dice o haga la IA no debe estar adulterado por terceros. Esta herramienta
+      fue originalmente creada para el desarrollo de Trabajo Fin de Grado, sigo en desarrollo de la misma avanzando e investigando sobre diferentes
+      módulos, herramientas reutilizables y nuevos vectores de ataques posibles.`,
+      tag: 'Ciberseguridad',
+      imageUrl: 'https://cyberdefenders.org/media/blog/author_images/CyberDefenders-logo.png',
+      color: '#0000FF',
+      techStack: [
+        'Llama.cpp',
+        'vLLM',
+        'Python',
+        'Ubuntu',
+        'Trivy',
+        'Garak',
+        'Promptfoo',
+        'DeepEval',
+      ],
+      link: 'https://github.com/GambaProExpert/MR-RobotIA/tree/main',
+    },
   ];
 
   getById(id: string): Project | undefined {

@@ -59,8 +59,13 @@ export class ProjectsDataService {
       id: 'MR-RobotIA',
       name: 'MR-RobotIA',
       shortDesc: 'Herramienta Blue team para seguridad de infraestructura de IA auto-alojada.',
-      longDesc: `Herramienta para la protección y auditoría de sistemas de IA auto-alojada a media y gran escala. Útil para prevención de una nueva serie de vectores de ataque que no solo afectan al host en sí, si no a todo el que hace uso del modelo abierto que haya alojado en él. Lo que nos dice o haga la IA no debe estar adulterado por terceros. Esta herramienta
-      fue originalmente creada para el desarrollo de Trabajo Fin de Grado, sigo en desarrollo de la misma avanzando e investigando sobre diferentes
+      longDesc: `Herramienta para la protección y auditoría de sistemas de IA auto-alojada a media y gran escala. Útil para prevención de una nueva serie de vectores de ataque que no solo afectan al host en sí, si no a todo el que hace uso del modelo abierto que haya alojado en él. Lo que nos dice o haga la IA no debe estar adulterado por terceros.
+
+      MR-RobotIA sirve para la auditoría defensiva (hardening) para cualquier servidor LLM auto alojado (llama.cpp, Ollama, vLLM, LM Studio…).
+      MRRobotIA orquesta herramientas ya consolidadas (garak, promptfoo, Trivy, DeepEval…) de forma local y offline y normaliza sus datos a un informe único con severidades y referencias a OWASP LLM Top 10 2025, MITRE ATLAS y NIST AI 600-1.
+      Pero ojo porque la auditoría no la hace MRRobotIA, los datos sí los saca, la auditoría la hace un experto.
+
+      Esta herramienta fue originalmente creada para el desarrollo de Trabajo Fin de Grado, sigo en desarrollo de la misma avanzando e investigando sobre diferentes
       módulos, herramientas reutilizables y nuevos vectores de ataques posibles.`,
       tag: 'Ciberseguridad',
       imageUrl: 'https://cyberdefenders.org/media/blog/author_images/CyberDefenders-logo.png',
